@@ -6,10 +6,10 @@ const container = () => {
   const rightPanel = document.createElement("div");
   const midPanel = document.createElement("div");
 
-  content.setAttribute("class", "container");
-  leftPanel.setAttribute("class", "left-panel");
-  rightPanel.setAttribute("class", "right-panel");
-  midPanel.setAttribute("class", "mid-panel");
+  content.setAttribute("id", "container");
+  leftPanel.setAttribute("id", "left-panel");
+  rightPanel.setAttribute("id", "right-panel");
+  midPanel.setAttribute("id", "mid-panel");
   content.append(leftPanel, midPanel, rightPanel);
   return content;
 };
