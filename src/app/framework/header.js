@@ -1,6 +1,6 @@
 const header = () => {
   // cache DOM
-  const navBar = document.createElement('header');
+  const navBar = document.createElement("header");
 
   // create buttons
   const linksContainer = document.createElement("div");
@@ -8,27 +8,20 @@ const header = () => {
   const aboutLink = document.createElement("button");
   const addLink = document.createElement("button");
 
-
-  // apply class and ID  
-  navBar.setAttribute("class", 
-        "header flex flex-dir-r flex-jc-sb flex-ai-c h3 m-3");
-  homeLink.setAttribute("class", 
-        "btn btn-outline-secondary m-1");
-  aboutLink.setAttribute("class", 
-        "btn btn-outline-secondary m-1");
-  addLink.setAttribute("class", 
-        "btn btn-outline-secondary m-1");
+  // apply class and ID
+  navBar.setAttribute("class", "header");
+  homeLink.setAttribute("class", "btn");
+  aboutLink.setAttribute("class", "btn");
+  addLink.setAttribute("class", "btn");
 
   homeLink.setAttribute("id", "home-button");
   aboutLink.setAttribute("id", "about-button");
-  addLink.setAttribute("id", "menu-button");
+  addLink.setAttribute("id", "add-button");
 
-
-  navBar.textContent = "OoOodles of Noodles";
+  navBar.textContent = "Do Watcha Gotta Do";
   homeLink.textContent = "Home";
   aboutLink.textContent = "About";
   addLink.textContent = "Add +";
-
 
   // click events for buttons
 
@@ -37,4 +30,4 @@ const header = () => {
   return navBar;
 };
 
-export default header
+export default header;
