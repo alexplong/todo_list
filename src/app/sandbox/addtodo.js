@@ -1,23 +1,26 @@
-const addToDo = (task, list, priority) => {
-  // let list = {};
-  // const _addToDo = (task, list, priority) => {};
-  const makeTask = () => {};
+import projectLists from "./projects";
 
-  const getTask = () => task;
-  const getList = () => list;
-  const getPriority = () => priority;
-  const getDateAdded = () => new Date().toUTCString();
-  const updateTask = (updatedTask) => (task = updatedTask);
-  const updatePriority = (updatedPriority) => (priority = updatedPriority);
+const addToDo = (task, list, priority) => {
+  // object generator
+  const _getTask = () => task;
+  const _getList = () => list;
+  const _getPriority = () => priority;
+  const _getDateAdded = () => new Date().toUTCString();
+
+  const makeToDo = () => {
+    let x = {
+      task: _getTask(),
+      list: _getList(),
+      priority: _getPriority(),
+      added: _getDateAdded(),
+    };
+    console.log(x);
+    projectLists().projectToDos(_getTask, _getList());
+  };
 
   return {
-    makeTask,
-    getTask,
-    getList,
-    getPriority,
-    getDateAdded,
-    updateTask,
-    updatePriority,
+    makeToDo,
+    _getTask,
   };
 };
 
