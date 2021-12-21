@@ -5,6 +5,8 @@ import addTodo from "./app/sandbox/addtodo";
 import addForm from "./app/sandbox/addform";
 
 (() => {
+  // render elements
+
   // site framework from modules
   const main = document.getElementById("content");
   main.append(header(), container());
