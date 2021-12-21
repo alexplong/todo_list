@@ -1,31 +1,47 @@
+import addToDo from "./addtodo";
+import projectLists from "./addlist";
+
 const addForm = () => {
   const form = document.createElement("form");
   const input = document.createElement("input");
+  const list = document.createElement("option");
   const priority = document.createElement("select");
   const submit = document.createElement("button");
+  const priorityChoose = document.createElement("option");
+  const priorityLow = document.createElement("option");
+  const priorityMed = document.createElement("option");
+  const priorityHigh = document.createElement("option");
 
   form.setAttribute("class", "hidden");
   input.setAttribute("type", "text");
-  priority.setAttribute("name", "Priority");
-
-  submit.textContent = "Submit";
-  const priorityChoose = document.createElement("option");
+  list.setAttribute("name", "list");
+  priority.setAttribute("name", "priority");
   priorityChoose.setAttribute("value", "none");
   priorityChoose.setAttribute("selected", "selected");
-  priorityChoose.textContent = " -- Choose Priority -- ";
-  const priorityLow = document.createElement("option");
   priorityLow.setAttribute("value", "low");
-  priorityLow.textContent = "Low";
-  const priorityMed = document.createElement("option");
   priorityMed.setAttribute("value", "med");
-  priorityMed.textContent = "Med";
-  const priorityHigh = document.createElement("option");
   priorityHigh.setAttribute("value", "high");
+
+  priorityChoose.textContent = " -- Choose Priority -- ";
+  priorityLow.textContent = "Low";
+  priorityMed.textContent = "Medium";
   priorityHigh.textContent = "High";
+  submit.textContent = "Submit";
 
   priority.append(priorityChoose, priorityLow, priorityMed, priorityHigh);
-
   form.append(input, priority, submit);
+
+  submit.onclick = function (e) {
+    e.preventDefault();
+    // console.log(this);
+    // console.log(input.value, priority.value);
+    // addToDo(input.value, list, priority.value);
+    addToDo(input.value, "general", priority.value);
+  };
+
+  about.onclick = function (e) {
+    addToDo().getList;
+  };
 
   return form;
 };
