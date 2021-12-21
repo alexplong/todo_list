@@ -1,7 +1,7 @@
 import "./main.scss";
 import header from "./app/framework/header";
 import container from "./app/framework/container";
-import addTodo from "./app/sandbox/todo";
+import addTodo from "./app/sandbox/addtodo";
 import addForm from "./app/sandbox/addform";
 
 (() => {
@@ -18,6 +18,6 @@ import addForm from "./app/sandbox/addform";
   const rightPanel = document.getElementById("right-panel");
 
   addButton.onclick = function (e) {
-    midPanel.append(addForm());
+    midPanel.append(addForm()); // change this to toggle instead later
   };
 })();
