@@ -1,8 +1,8 @@
-import addToDo from "./addtodo";
+import newToDo from "./addtodo";
 import projectLists from "./projects";
 
 const addForm = () => {
-  // Form setup structrure
+  // todo input form UI
   const form = document.createElement("form");
   const input = document.createElement("input");
   const list = document.createElement("select");
@@ -45,8 +45,12 @@ const addForm = () => {
   // event listener for buttons
   submit.onclick = function (e) {
     e.preventDefault();
-    addToDo(input.value, list.value, priority.value).makeToDo();
-    // console.log(projectLists().getToDos(list.value));
+    console.log(
+      `Adding todo: ${input.value}, list: ${list.value}, and priority: ${priority.value}`
+    );
+    // console.log("Getting list: ", projectLists().getToDos(list.value));
+
+    newToDo(input.value, list.value, priority.value).addToList();
   };
 
   return form;
