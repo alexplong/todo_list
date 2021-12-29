@@ -29,7 +29,7 @@ const addForm = () => {
   priorityHigh.textContent = "High";
   submit.textContent = "Submit";
 
-  // Project lists structure
+  // Projects pull down menu
   projectLists()
     .getProjects()
     .forEach((project) => {
@@ -45,12 +45,7 @@ const addForm = () => {
   // event listener for buttons
   submit.onclick = function (e) {
     e.preventDefault();
-    console.log(
-      `Adding todo: ${input.value}, list: ${list.value}, and priority: ${priority.value}`
-    );
-    // console.log("Getting list: ", projectLists().getToDos(list.value));
-
-    newToDo(input.value, list.value, priority.value).addToList();
+    let newTask = newToDo(input.value, list.value, priority.value).addToList();
   };
 
   return form;
